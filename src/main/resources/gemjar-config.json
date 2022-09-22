@@ -1,0 +1,18 @@
+{
+  "environment": "beta",
+  "projectName": "jewel-UI-JV",
+  "reportName": "GemJar UI Sample Report",
+  "gemjarUserName": "maulick",
+  "glueCode":"StepDefination",
+  "gemjarSubID": "test_id",
+  "dev": {
+    "browserName": "chrome",
+    "launchUrl": "https://jewel.gemecosystem.com/",
+    "browserTimeout": 100
+  },
+  "beta": {
+    "browserName": "chrome",
+    "launchUrl": "https://jewel.gemecosystem.com/",
+    "browserTimeout": 100
+  }
+}
