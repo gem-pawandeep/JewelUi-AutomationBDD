@@ -13,8 +13,8 @@ public class locator {
     public static By LoginButton=By.xpath("//*[@type=\"submit\"]");
     public static By pricing=By.xpath("//*[@href=\"#/pricing\"]");
     public static By pricingheading=By.xpath("//*[@class=\"headingtext\"]");
-    public static By eye=By.xpath("//*[@data-icon=\"eye-slash\"]");
-    public static By eyeclose=By.xpath("//*[@class='svg-inline--fa fa-eye password-hideicon fa-sm']");
+    public static By eye=By.xpath("//i[@class='pi pi-eye']");
+    public static By eyeclose=By.xpath("//i[@class='pi pi-eye-slash']");
     public static By pricingsubheading=By.xpath("//*[@class=\"headingsubtext\"]");
     public static By jewelheading=By.xpath("//*[@class=\"mainHead mt-5 ms-5\"]");
     public static By jewelsubheading=By.xpath("//*[@class=\"subHead ms-5\"]");

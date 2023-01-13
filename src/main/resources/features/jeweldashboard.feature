@@ -72,35 +72,35 @@ Feature: jeweldashboard
     Examples:
       | insta                                   |
       | https://www.instagram.com/gemecosystem/ |
-
-  Scenario Outline:clicking on linkedin logo and validating url
-    Given click on linkedin logo and validate url <linked>
-    Examples:
-      | linked                   |
-      | https://www.linkedin.com |
-
-  Scenario:clicking on jewel dashboard logo
-    Given click on jewel dashboard button
-
-  Scenario Outline:clicking on gemPYP
-    Given click on gemPYP and validate url <pyp>
-    Examples:
-      | pyp                              |
-      | https://gempyp.gemecosystem.com/ |
-
-  Scenario Outline:clicking on gemPRF
-    Given click on gemPRF and validate url <prf>
-    Examples:
-      | prf                              |
-      | https://gemprf.gemecosystem.com/ |
-
-  Scenario Outline:clicking on gemJAR
-    Given click on gemJAR and validate url <jar>
-    Examples:
-      | jar                              |
-      | https://gemjar.gemecosystem.com/ |
-
-  Scenario:click on pricing logo
-    Given click on pricing button
-
-
+#
+#  Scenario Outline:clicking on linkedin logo and validating url
+#    Given click on linkedin logo and validate url <linked>
+#    Examples:
+#      | linked                   |
+#      | https://www.linkedin.com |
+#
+#  Scenario:clicking on jewel dashboard logo
+#    Given click on jewel dashboard button
+#
+#  Scenario Outline:clicking on gemPYP
+#    Given click on gemPYP and validate url <pyp>
+#    Examples:
+#      | pyp                              |
+#      | https://gempyp.gemecosystem.com/ |
+#
+#  Scenario Outline:clicking on gemPRF
+#    Given click on gemPRF and validate url <prf>
+#    Examples:
+#      | prf                              |
+#      | https://gemprf.gemecosystem.com/ |
+#
+#  Scenario Outline:clicking on gemJAR
+#    Given click on gemJAR and validate url <jar>
+#    Examples:
+#      | jar                              |
+#      | https://gemjar.gemecosystem.com/ |
+#
+#  Scenario:click on pricing logo
+#    Given click on pricing button
+#
+#

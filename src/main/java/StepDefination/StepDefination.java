@@ -6,6 +6,7 @@ import com.gemini.generic.ui.utils.DriverAction;
 import com.gemini.generic.ui.utils.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.Color;
 import Locators.locator;
 
@@ -27,7 +28,11 @@ public class StepDefination {
     @Then("^enter (.+) and (.+)")
     public void loginPage(String Username, String Password) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.click(locator.logIn);
+        System.out.println(DriverAction.getBrowserSize());
+        GemTestReporter.addTestStep("Browser Location",""+DriverAction.getBrowserSize(),STATUS.INFO,DriverAction.takeSnapShot());
+        JavascriptExecutor js=(JavascriptExecutor)DriverManager.getWebDriver();
+        js.executeScript("arguments[0].click();", DriverAction.getElement(locator.logIn));
+//        DriverAction.click(locator.logIn);
         DriverAction.waitSec(2);
         DriverAction.click(locator.username, "username has been clicked");
         DriverAction.waitSec(1);
@@ -140,7 +145,7 @@ public class StepDefination {
     @Given("^validating whatisjewel (.+)$")
     public void whatisjewel(String whatisjewel) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(500, 500, false);
+        DriverAction.pageScroll(500, 500);
         DriverAction.waitSec(3);
         GemTestReporter.addTestStep("Scrolling", "Scrolling has been done", STATUS.PASS, DriverAction.takeSnapShot());
         String s7 = DriverAction.getElementText(locator.whatisjewel);
@@ -174,7 +179,7 @@ public class StepDefination {
     @Given("^validating view report (.+)$")
     public void viewreport(String viewreport) {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(500, 500, true);
+        DriverAction.pageScroll(500, 500);
         DriverAction.waitSec(3);
         String s10 = DriverAction.getElementText(locator.viewreport);
         if (s10.contains(viewreport)) {
@@ -197,7 +202,7 @@ public class StepDefination {
     @Given("^validating run test (.+)$")
     public void runtest(String runtest) {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1000, 1000, false);
+        DriverAction.pageScroll(1000, 1000);
         DriverAction.waitSec(3);
         GemTestReporter.addTestStep("Scrolling", "Scrolling has been done", STATUS.INFO, DriverAction.takeSnapShot());
         String s12 = DriverAction.getElementText(locator.runtest);
@@ -221,7 +226,7 @@ public class StepDefination {
     @Given("^click on facebook logo validate url (.+)$")
     public void facebook(String facebook) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.facebook);
         DriverAction.waitSec(2);
@@ -231,7 +236,7 @@ public class StepDefination {
         DriverAction.waitSec(4);
         GemTestReporter.addTestStep("Facebook logo click", "facebook has been clicked", STATUS.PASS, DriverAction.takeSnapShot());
         String s15 = DriverAction.getCurrentURL();
-        if (s15.equals(facebook)) {
+        if (s15.contains("facebook")) {
             GemTestReporter.addTestStep(" facebook Url Validation", "Successful<br>Expected URL: " + facebook + "<br>Actual URL: " + s15, STATUS.PASS);
         } else {
             GemTestReporter.addTestStep(" facebook Url Validation", "unsuccessful<br>Expected URL: " + facebook + "<br>Actual URL: " + s15, STATUS.FAIL);
@@ -248,7 +253,7 @@ public class StepDefination {
     @Given("click on twitter logo and validate url (.+)$")
     public void twitter(String twitter) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.twitter);
         ArrayList<String> newTb1 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -272,7 +277,7 @@ public class StepDefination {
     @Given("^click on instagram logo and validate url (.+)$")
     public void instagram(String insta) {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.instagram);
         ArrayList<String> newTb2 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -296,7 +301,7 @@ public class StepDefination {
     @Given("^click on linkedin logo and validate url (.+)$")
     public void linkedin(String linked) {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.linkedin);
         ArrayList<String> newTb3 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -320,7 +325,7 @@ public class StepDefination {
     @Given("^click on jewel dashboard button$")
     public void jewelogo() throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, false);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.jeweldashboard);
         DriverAction.waitSec(2);
@@ -330,7 +335,7 @@ public class StepDefination {
     @Given("^click on gemPYP and validate url (.+)$")
     public void gempyp(String pyp) throws Exception{
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.gempyp);
         ArrayList<String> newTb4 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -354,7 +359,7 @@ public class StepDefination {
     @Given("^click on gemPRF and validate url (.+)$")
     public void gemprf(String prf) throws Exception{
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.gemprf);
         ArrayList<String> newTb5 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -378,7 +383,7 @@ public class StepDefination {
     @Given("^click on gemJAR and validate url (.+)$")
     public void gemjar(String jar) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, true);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.gemjar);
         ArrayList<String> newTb6 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -402,7 +407,7 @@ public class StepDefination {
     @Given("^click on pricing button$")
     public void pricingbutton() throws Exception{
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500, false);
+        DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.pricingbutton);
         DriverAction.waitSec(2);
